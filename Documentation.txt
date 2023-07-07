@@ -1,0 +1,24 @@
+Database Name = review_system
+
+Run Migration -> php artisan migrate
+then run seeder -> php artisan db:seed
+
+then php artisan serve;
+next create user and seller.
+
+User: can see products and reviews and gives review also.
+seller: can create Products, see review and also see suspicious review.
+
+then for checking you can run php artisan schedule:run command basically I am creating a Cron Job
+but you can call from different handle because I am using in Singleton design pattern.
+
+Review Criteria:
+-- morethan 2 review at a time it will consider suspicious
+-- user has suspecious before then it will consider suspecious
+-- if user sentiment rate below the 1 so it will consider suspecious because consider as full positive
+-- check previous review if current review and previous review time gap lessthan 2 hours with the same user so it will consider suspecious
+-- check only those type of reviews which has active status, review user has active, seller has active status and time is greaterthan 2 hours from current time
+
+
+THANKS
+================================================
